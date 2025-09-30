@@ -1,5 +1,19 @@
 # STM32F1 flushing test
 
+## Building using NoBuild
+```sh
+gcc nob.c -o nob
+./nob
+```
+
+## Requirments
+```txt
+arm-none-eabi-gcc
+arm-none-eabi-gdb
+arm-none-eabi-newlib
+openocd
+```
+
 ## Specs
 F - general purpose
 1 - first gen
@@ -12,19 +26,11 @@ T - industrial temp range (-40C, +85C)
 
 ## Where got files
 
-`./STM32F102X6_FLASH.ld` - from STM32CubeF1/Drivers/CMSIS/Device/ST/STM32F1xx/Source/Templates/gcc/linker
-`./startup_stm32f103xb.s` - from STM32CubeF1/Drivers/CMSIS/Device/ST/STM32F1xx/Source/Templates/gcc
-`./system_stm32f1xx.c` - from STM32CubeF1/Drivers/CMSIS/Device/ST/STM32F1xx/Source/Templates/
-`./CMSIS/Core/Include` - STM32CubeF1/Drivers/CMSIS/Core/Include
-`./CMSIS/STM32F1/Include` - STM32CubeF1/Drivers/CMSIS/Core/Include
-
-## Requirments
-```txt
-arm-none-eabi-gcc
-arm-none-eabi-gdb
-arm-none-eabi-newlib
-openocd
-```
+`./STM32F102X6_FLASH.ld` - STM32CubeF1 -> ./Drivers/CMSIS/Device/ST/STM32F1xx/Source/Templates/gcc/linker
+`./startup_stm32f103xb.s` - STM32CubeF1 -> ./Drivers/CMSIS/Device/ST/STM32F1xx/Source/Templates/gcc
+`./system_stm32f1xx.c` - STM32CubeF1 -> ./Drivers/CMSIS/Device/ST/STM32F1xx/Source/Templates/
+`./CMSIS/Core/Include` - STM32CubeF1 -> ./Drivers/CMSIS/Core/Include
+`./CMSIS/STM32F1/Include` - STM32CubeF1 -> ./Drivers/CMSIS/Core/Include
 
 ## Links
 STM32 naming conventions:
