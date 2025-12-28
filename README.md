@@ -1,17 +1,21 @@
 # STM32F1 flushing test
 
-## Building using NoBuild
+## Building
 ```sh
 gcc build.c -o build
-./nob 1_blink
+./build <example>
+# Examples:
 # 1_blink - led blinking example
+# 2_blink_timer - led blinking with system timer example
 ```
+NOTE: While flashing using build hold reset button, then flash without holding it
 
 ## Requirments
 ```txt
 arm-none-eabi-gcc
 arm-none-eabi-gdb
 arm-none-eabi-newlib
+stlink
 openocd
 ```
 

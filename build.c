@@ -36,7 +36,8 @@ int main(int argc, char** argv) {
 
 	if (!cmd_run(&cmd)) { return 1; }
 
-	cmd_append(&cmd, "st-flash", "write", "out/binary.bin", "0x08000000");
+	//cmd_append(&cmd, "st-flash", "write", "out/binary.bin", "0x08000000");
+	cmd_append(&cmd, "st-flash", "--connect-under-reset", "write", "out/binary.bin", "0x08000000");
 
 	if (!cmd_run(&cmd)) { return 1; }
 
