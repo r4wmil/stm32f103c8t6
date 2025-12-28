@@ -3,7 +3,8 @@
 ## Building using NoBuild
 ```sh
 gcc build.c -o build
-./nob
+./nob 1_blink
+# 1_blink - led blinking example
 ```
 
 ## Requirments

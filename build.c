@@ -7,14 +7,21 @@
 int main(int argc, char** argv) {
 
 	NOB_GO_REBUILD_URSELF(argc, argv);
+
+	if (argc != 2) {
+		nob_log(NOB_ERROR, "Must have 1 argument: ");
+		nob_log(NOB_ERROR, "E. g.: './build 1_blink'");
+		return 1;
+	}
 	
 	Cmd cmd = {0};
 
 	if (!nob_mkdir_if_not_exists("out")) { return 1; }
 
+	cmd_append(&cmd, CC, nob_temp_sprintf("%s/main.c", argv[1]));
+	nob_temp_reset();
 	cmd_append(&cmd,
-			CC,
-			"main.c", "platform/startup_stm32f103xb.s", "platform/system_stm32f1xx.c",
+			"platform/startup_stm32f103xb.s", "platform/system_stm32f1xx.c",
 			"-T", "platform/STM32F102X6_FLASH.ld",
 			"-o", "out/binary.elf",
 			"-I/usr/arm-none-eabi/include", "-ICMSIS/Core/Include", "-ICMSIS/STM32F1/Include",
