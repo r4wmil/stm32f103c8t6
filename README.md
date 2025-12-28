@@ -2,7 +2,7 @@
 
 ## Building using NoBuild
 ```sh
-gcc nob.c -o nob
+gcc build.c -o build
 ./nob
 ```
 
