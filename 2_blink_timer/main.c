@@ -2,8 +2,6 @@
 
 #define LED_PIN 13
 
-void _init(void) {} // dummy
-
 void SysTick_Handler(void) {
 	static uint32_t count = 0;
 	// BSRR - Bits Set/Reset Register

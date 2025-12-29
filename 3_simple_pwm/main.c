@@ -3,8 +3,6 @@
 
 #define LED_PIN 13
 
-void _init(void) {} // dummy
-
 // SysTick divider (for 100 us interrupts)
 #define SYSTICK_DIVIDER (10000)
 // 25'000 us ~= 40 Hz

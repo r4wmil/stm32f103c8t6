@@ -3,8 +3,6 @@
 
 #define LED_PIN 13
 
-void _init(void) {} // dummy
-
 int main(void) {
 
 	// GPIOC   - General Purpose In Input Output
